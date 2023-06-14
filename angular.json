@@ -27,10 +27,16 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
             ],
             "styles": [
               "src/styles.scss"
+            
             ],
             "scripts": []
           },
@@ -90,12 +96,41 @@
             "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
-              "src/assets"
+              "src/assets",
+              {
+                "glob": "**/*.svg",
+                "input": "node_modules/ionicons/dist/ionicons/svg",
+                "output": "./svg"
+              }
             ],
             "styles": [
               "src/styles.scss"
             ],
             "scripts": []
+          }
+        },
+        "ionic-cordova-serve": {
+          "builder": "@ionic/angular-toolkit:cordova-serve",
+          "options": {
+            "cordovaBuildTarget": "password-strength-meter:ionic-cordova-build",
+            "devServerTarget": "password-strength-meter:serve"
+          },
+          "configurations": {
+            "production": {
+              "cordovaBuildTarget": "password-strength-meter:ionic-cordova-build:production",
+              "devServerTarget": "password-strength-meter:serve:production"
+            }
+          }
+        },
+        "ionic-cordova-build": {
+          "builder": "@ionic/angular-toolkit:cordova-build",
+          "options": {
+            "browserTarget": "password-strength-meter:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "password-strength-meter:build:production"
+            }
           }
         }
       }

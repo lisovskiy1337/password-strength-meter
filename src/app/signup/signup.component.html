@@ -1,0 +1,32 @@
+<div class="login-card">
+  <h2>Sign Up</h2>
+  <form class="login-form">
+    <div [ngClass]="'strength__bars ' + strength">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <div class="input__wrapper">
+      <input
+        name="password"
+        spellcheck="false"
+        class="control"
+        placeholder="Password"
+        type="{{ showPassword ? 'text' : 'password' }}"
+        (input)="handleChange($event)"
+      />
+      <button
+        type="button"
+        class="toggle-password"
+        (click)="togglePasswordVisibility()"
+      >
+        <ng-icon
+          class="icon"
+          [name]="showPassword ? 'ionEyeOutline' : 'ionEyeOffOutline'"
+        ></ng-icon>
+      </button>
+    </div>
+    <div class="strength" *ngIf="strength">{{ strength }} password</div>
+    <button class="control" type="button">JOIN NOW</button>
+  </form>
+</div>

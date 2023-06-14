@@ -1,16 +1,16 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { NgIconsModule } from '@ng-icons/core';
 import { AppComponent } from './app.component';
-
+import { SignupComponent } from './signup/signup.component';
+import { ionEyeOutline, ionEyeOffOutline } from '@ng-icons/ionicons';
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent, SignupComponent],
   imports: [
-    BrowserModule
+    BrowserModule,
+    NgIconsModule.withIcons({ ionEyeOutline, ionEyeOffOutline }),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
